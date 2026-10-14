@@ -1,0 +1,11 @@
+# Abscess
+
+An abscess is a pocket of pus. You can get an abscess almost anywhere in your body. When an area of your body becomes infected, your body's immune system tries to fight the infection. White blood cells go to the infected area, collect within the damaged tissue, and cause inflammation. During this process, pus forms. Pus is a mixture of living and dead white blood cells, germs, and dead tissue.
+
+Bacteria, viruses, parasites and swallowed objects can all lead to abscesses. Skin abscesses are easy to detect. They are red, raised and painful. Abscesses inside your body may not be obvious and can damage organs, including the brain, lungs and others. Treatments include drainage and antibiotics.
+
+## Source
+
+MedlinePlus, U.S. National Library of Medicine. Content is free to use; attribute MedlinePlus.gov.
+Page: https://medlineplus.gov/abscess.html
+This is general health information, not a diagnosis or a prescription.

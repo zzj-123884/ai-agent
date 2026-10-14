@@ -1,0 +1,49 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: ai-agent-redis
+    # 对外不暴露端口，只有同网络的 app 能访问
+    command: redis-server --appendonly yes
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    networks: [ai-net]
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ai-agent:0.0.1
+    container_name: ai-agent
+    env_file:
+      - .env
+    environment:
+      TZ: Asia/Shanghai
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: "6379"
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - redis
+    restart: unless-stopped
+    networks: [ai-net]
+
+  web:
+    build:
+      context: ./ai-agent-frontend
+      dockerfile: Dockerfile
+    image: ai-agent-frontend:latest
+    container_name: ai-agent-frontend
+    # 80 端口若被 Windows HTTP.sys 占用报 address already in use，改成 "8080:80"
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+    restart: unless-stopped
+    networks: [ai-net]
+
+networks:
+  ai-net:
+
+volumes:
+  redis-data:

@@ -1,0 +1,27 @@
+# Scars
+
+A scar is a permanent patch of skin that grows over a wound. It forms when your body heals itself after a cut, scrape, burn, or sore. You can also get scars from surgery that cuts through the skin, infections like chickenpox, or skin conditions like acne. Scars are often thicker, as well as pinker, redder, or shinier, than the rest of your skin.
+
+How your scar looks depends on:
+
+- How big and deep your wound is
+
+- Where it is
+
+- How long it takes to heal
+
+- Your age
+
+- Your inherited tendency to scar
+
+Scars usually fade over time but never go away completely. If the way a scar looks bothers you, various treatments might minimize it. These include surgical revision, dermabrasion, laser treatments, injections, chemical peels, and creams.
+
+## Also called
+
+Cicatrix, Keloid scar
+
+## Source
+
+MedlinePlus, U.S. National Library of Medicine. Content is free to use; attribute MedlinePlus.gov.
+Page: https://medlineplus.gov/scars.html
+This is general health information, not a diagnosis or a prescription.

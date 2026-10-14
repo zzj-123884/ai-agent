@@ -1,0 +1,85 @@
+spring:
+  config:
+    # 本地 IDEA 不读取系统环境时，从项目根目录的 .env 加载。该文件已忽略，不会进仓库。
+    import: optional:file:.env[.properties]
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD}
+    url: ${DB_URL:jdbc:postgresql://127.0.0.1:5432/agent}
+
+  sql:
+    init:
+      # 启动时执行 schema.sql 建表（语句带 IF NOT EXISTS，幂等）
+      mode: always
+      schema-locations: classpath:schema.sql
+      # 表已存在时不因建表报错而阻断启动
+      continue-on-error: true
+  application:
+    name: ai-agent
+  ai:
+    mcp:
+      client:
+        stdio:
+          servers-configuration: classpath:mcp-servers.json
+        # sse:
+        #   connections:
+        #     server1:
+        #       url: http://localhost:8127
+    vectorstore:
+      pgvector:
+        index-type: HNSW
+        dimensions: 1536
+        distance-type: COSINE_DISTANCE
+        max-document-batch-size: 10000
+    dashscope:
+      api-key: ${DASHSCOPE_API_KEY}
+      chat:
+        options:
+          model: qwen-plus
+    deepseek:
+      api-key: ${DEEPSEEK_API_KEY}
+      base-url: https://api.deepseek.com
+      chat:
+        model: deepseek-flash
+        max-tokens: 4096
+  data:
+    redis:
+      host: ${SPRING_DATA_REDIS_HOST:localhost}
+      port: ${SPRING_DATA_REDIS_PORT:6379}
+app:
+  medical-rag:
+    # 第一次会调用通义向量接口并写入 data/。改过文档后设为 true 再启动一次
+    rebuild: false
+    index-path: data/medical-vector-store-v4.json
+    top-k: 4
+    similarity-threshold: 0.28
+server:
+  port: 8123
+  servlet:
+    context-path: /api
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: ['/**']
+      packages-to-scan: ['org.example.aiagent.controller']
+# knife4j 增强配置
+# production 为 true 时文档页（/doc.html）与 /v3/api-docs 将彻底不可访问。
+# 本地开发默认 false（方便调试），生产部署务必在 .env 里设 KNIFE4J_PRODUCTION=true。
+knife4j:
+  enable: true
+  production: ${KNIFE4J_PRODUCTION:false}
+  setting:
+    language: zh_cn
+search-api:
+  api-key: ${SEARCH_API_KEY}
+#logging:
+#  level:
+#    org.springframework.ai: DEBUG
+

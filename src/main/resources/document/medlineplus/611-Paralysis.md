@@ -1,0 +1,23 @@
+# Paralysis
+
+Paralysis is the loss of muscle function in part of your body. It happens when something goes wrong with the way messages pass between your brain and muscles. Paralysis can be complete or partial. It can occur on one or both sides of your body. It can also occur in just one area, or it can be widespread. Paralysis of the lower half of your body, including both legs, is called paraplegia. Paralysis of the arms and legs is quadriplegia.
+
+Most paralysis is due to strokes or injuries such as spinal cord injury or a broken neck. Other causes of paralysis include:
+
+- Nerve diseases such as amyotrophic lateral sclerosis
+
+- 	Autoimmune diseases such as Guillain-Barre syndrome
+
+- 	Bell's palsy, which affects muscles in the face
+
+Polio used to be a cause of paralysis, but polio no longer occurs in the U.S.
+
+## Also called
+
+Hemiplegia, Palsy, Paraplegia, Quadriplegia
+
+## Source
+
+MedlinePlus, U.S. National Library of Medicine. Content is free to use; attribute MedlinePlus.gov.
+Page: https://medlineplus.gov/paralysis.html
+This is general health information, not a diagnosis or a prescription.

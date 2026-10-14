@@ -1,0 +1,13 @@
+# Rectal Disorders
+
+The rectum is the lower part of your large intestine where your body stores stool. Problems with the rectum are common. They include hemorrhoids, abscesses, incontinence and cancer.
+
+Many people are embarrassed to talk about rectal troubles. But seeing your doctor about problems in this area is important. This is especially true if you have pain or bleeding. Treatments vary depending on the particular problem.
+
+NIH: National Institute of Diabetes and Digestive and Kidney Diseases
+
+## Source
+
+MedlinePlus, U.S. National Library of Medicine. Content is free to use; attribute MedlinePlus.gov.
+Page: https://medlineplus.gov/rectaldisorders.html
+This is general health information, not a diagnosis or a prescription.

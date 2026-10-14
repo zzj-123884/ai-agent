@@ -1,0 +1,11 @@
+# Facial Injuries and Disorders
+
+Face injuries and disorders can cause pain and affect how you look. In severe cases, they can affect sight, speech, breathing and your ability to swallow. Fractures (broken bones), especially in the bones of your nose, cheekbone and jaw, are common facial injuries.
+
+Certain diseases also lead to facial disorders. For example, nerve diseases like trigeminal neuralgia or Bell's palsy sometimes cause facial pain, spasms and trouble with eye or facial movement. Birth defects can also affect the face. They can cause underdeveloped or unusually prominent facial features or a lack of facial expression. Cleft lip and palate are a common facial birth defect.
+
+## Source
+
+MedlinePlus, U.S. National Library of Medicine. Content is free to use; attribute MedlinePlus.gov.
+Page: https://medlineplus.gov/facialinjuriesanddisorders.html
+This is general health information, not a diagnosis or a prescription.

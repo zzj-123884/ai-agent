@@ -1,0 +1,18 @@
+.git
+.idea
+.vscode
+*.iml
+target
+**/target
+node_cache
+ai-agent-frontend/node_modules
+ai-agent-frontend/dist
+ai-agent-frontend/node_cache
+node_cache
+data
+HELP.md
+**/.DS_Store
+*.log
+
+# 密钥文件禁止进入构建上下文
+.env

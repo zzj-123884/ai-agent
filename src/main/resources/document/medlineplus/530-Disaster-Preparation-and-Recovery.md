@@ -1,0 +1,13 @@
+# Disaster Preparation and Recovery
+
+Preparing for a disaster can reduce the fear, anxiety and losses that disasters cause. A disaster can be a  natural disaster, like a hurricane, tornado, flood or earthquake. It might also be  man-made, like a bioterrorist attack or chemical spill. You should know the risks and danger signs of different types of disasters. You should also have a disaster plan. Be ready to evacuate your home, and know how to treat basic medical problems. Make sure you have the insurance you need, including special types, like flood insurance.
+
+No matter what kind of disaster you experience, it causes emotional distress. After a disaster, recovery can take time. Stay connected to your family and friends during this period.
+
+Federal Emergency Management Agency
+
+## Source
+
+MedlinePlus, U.S. National Library of Medicine. Content is free to use; attribute MedlinePlus.gov.
+Page: https://medlineplus.gov/disasterpreparationandrecovery.html
+This is general health information, not a diagnosis or a prescription.

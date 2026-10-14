@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: image-search-mcp-server
+  profiles:
+    active: stdio
+  config:
+    import:
+      - optional:file:.env[.properties]
+      - optional:file:../.env[.properties]
+server:
+  port: 8127

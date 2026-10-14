@@ -1,0 +1,23 @@
+# Nutritional Support
+
+Nutritional support is therapy for people who cannot get enough nourishment by eating or drinking.  You may need it if you :
+
+- Can't swallow
+
+- Have problems with your appetite
+
+- Are severely malnourished
+
+- Can't absorb nutrients through your digestive system
+
+You receive nutritional support through a needle or catheter placed in your vein or with a feeding tube, which goes into your stomach.
+
+## Also called
+
+Artificial feeding, Artificial hydration and nutrition, Hyperalimentation, Parenteral nutrition, TPN, Tube feeding
+
+## Source
+
+MedlinePlus, U.S. National Library of Medicine. Content is free to use; attribute MedlinePlus.gov.
+Page: https://medlineplus.gov/nutritionalsupport.html
+This is general health information, not a diagnosis or a prescription.

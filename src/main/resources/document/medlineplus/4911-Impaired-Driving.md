@@ -1,0 +1,27 @@
+# Impaired Driving
+
+Impaired driving is dangerous. It's the cause of more than half of all car crashes.  It means operating a motor vehicle while you are affected by:
+
+- Alcohol
+
+- Legal or illegal drugs
+
+- Sleepiness
+
+- Distractions, such as using a cell phone or texting
+
+- Having a medical condition which affects your driving
+
+For your safety and the safety of others, do not drive while impaired.  Have someone else drive you or take public transportation when you cannot drive. If you need to take a call or send a text message, pull over.
+
+National Highway Traffic Safety Administration
+
+## Also called
+
+Distracted driving, Drugged driving, Drunk driving
+
+## Source
+
+MedlinePlus, U.S. National Library of Medicine. Content is free to use; attribute MedlinePlus.gov.
+Page: https://medlineplus.gov/impaireddriving.html
+This is general health information, not a diagnosis or a prescription.

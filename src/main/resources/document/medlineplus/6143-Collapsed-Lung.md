@@ -1,0 +1,25 @@
+# Collapsed Lung
+
+A collapsed lung happens when air enters the pleural space, the area between the lung and the chest wall. If it is a total collapse, it is called pneumothorax. If only part of the lung is affected, it is called atelectasis.
+
+Causes of a collapsed lung include:
+
+- Lung diseases such as pneumonia or lung cancer
+
+- Being on a breathing machine
+
+- Surgery on the chest or abdomen
+
+- A blocked airway
+
+If only a small area of the lung is affected, you may not have symptoms. If a large area is affected, you may feel short of breath and have a rapid heart rate.
+
+A chest x-ray can tell if you have it. Treatment depends on the underlying cause.
+
+NIH: National Heart, Lung, and Blood Institute
+
+## Source
+
+MedlinePlus, U.S. National Library of Medicine. Content is free to use; attribute MedlinePlus.gov.
+Page: https://medlineplus.gov/collapsedlung.html
+This is general health information, not a diagnosis or a prescription.

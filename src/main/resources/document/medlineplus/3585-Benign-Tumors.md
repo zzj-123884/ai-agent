@@ -1,0 +1,19 @@
+# Benign Tumors
+
+Tumors are abnormal growths in your body. They can be either benign or malignant. Benign tumors aren't cancer. Malignant ones are. Benign tumors grow only in one place. They cannot spread or invade other parts of your body. Even so, they can be dangerous if they press on vital organs, such as your brain.
+
+Tumors are made up of extra cells. Normally, cells grow and divide to form new cells as your body needs them. When cells grow old, they die, and new cells take their place. Sometimes, this process goes wrong. New cells form when your body does not need them, and old cells do not die when they should. These extra cells can divide without stopping and may form a tumor.
+
+Treatment often involves surgery. Benign tumors usually don't grow back.
+
+NIH: National Cancer Institute
+
+## Also called
+
+Benign neoplasms, Noncancerous tumors
+
+## Source
+
+MedlinePlus, U.S. National Library of Medicine. Content is free to use; attribute MedlinePlus.gov.
+Page: https://medlineplus.gov/benigntumors.html
+This is general health information, not a diagnosis or a prescription.
