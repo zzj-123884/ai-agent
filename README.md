@@ -14,15 +14,21 @@
 
 登录后进入应用中心，从这里进入医学助手、超级智能体或 API Key 管理。未登录时访问首页会被送到登录页。
 
+![首页](docs/screenshots/home.png)
+
 ### 登录
 
 地址：`http://localhost:5173/login`
 
 账号为 4 到 32 位字母或数字，密码至少 8 位。登录成功后回到原本要打开的页面。
 
+![登录](docs/screenshots/login.png)
+
 ### 注册
 
 注册和登录共用 `/login`。注册成功后回到登录表单，再输入密码登录。
+
+![注册](docs/screenshots/register.png)
 
 ### 医学助手
 
@@ -30,11 +36,15 @@
 
 输入症状或健康问题后，后端先检索 MedlinePlus，再把命中的段落放进系统提示词，由 DeepSeek 用中文流式回答。页面提示回答会附带来源。这里不做诊断、不开药。
 
+![医学助手](docs/screenshots/medical.png)
+
 ### 超级智能体
 
 地址：`http://localhost:5173/manus-app`
 
 用户描述一项任务后，智能体分步思考，并由应用自己执行搜索、读写文件和终端命令。每一步的调用和结果会通过 SSE 推到页面。停止任务时写入内存标志，在下一步开始前停住，已经发出的模型请求不会被中途掐断。
+
+![超级智能体](docs/screenshots/agent.png)
 
 ### API Key 管理
 
@@ -42,7 +52,11 @@
 
 登录后可以获取 Key、查看已用配额，以及禁用或删除已有 Key。明文 token 只在创建成功时出现一次，数据库里只保存它的 SHA-256 摘要。配额留空表示不限次数，成功调用才会扣减。
 
+![API Key 管理](docs/screenshots/api-key.png)
+
 点击「获取 Key」后弹出窗口，填写名称和配额。
+
+![获取 Key](docs/screenshots/api-key-dialog.png)
 
 第三方这样调用医学助手：
 
@@ -60,6 +74,8 @@ curl http://localhost:8123/api/v1/chat/completions \
 地址：`http://localhost:8123/api/doc.html`
 
 Knife4j 列出后端接口，本地调试时使用。生产环境应把 `KNIFE4J_PRODUCTION` 设为 `true`，关掉文档页。
+
+![接口文档](docs/screenshots/api-docs.png)
 
 ## 医学助手如何检索
 

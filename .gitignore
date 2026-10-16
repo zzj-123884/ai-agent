@@ -47,6 +47,3 @@ compile.log
 node_modules/
 dist/
 node_cache/
-
-### 页面截图（不提交） ###
-docs/screenshots/
