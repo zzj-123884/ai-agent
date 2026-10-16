@@ -7,8 +7,8 @@ import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.ai.vectorstore.filter.Filter;
 import org.springframework.ai.vectorstore.filter.FilterExpressionBuilder;
 
-public class LoveAppRagCustomAdvisorFactory {
-    public static Advisor createLoveAppRagCustomAdvisor(VectorStore vectorStore,String status){
+public class MedicalRagAdvisorFactory {
+    public static Advisor createMedicalRagAdvisor(VectorStore vectorStore,String status){
         Filter.Expression expression = new FilterExpressionBuilder()
                 .eq("status", status)
                 .build();
@@ -22,7 +22,7 @@ public class LoveAppRagCustomAdvisorFactory {
 
         return RetrievalAugmentationAdvisor.builder()
                 .documentRetriever(documentRetriever)
-                .queryAugmenter(LoveAppContextualQueryAugmenterFactory.createInstance())
+                .queryAugmenter(MedicalQueryAugmenterFactory.createInstance())
                 .build();
     }
 }

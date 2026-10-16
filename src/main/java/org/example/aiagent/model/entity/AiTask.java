@@ -42,7 +42,7 @@ public class AiTask implements Serializable {
     private Long apiKeyId;
 
     /**
-     * 任务类型，如 MANUS / LOVE_APP，便于分维度统计。
+     * 任务类型，如 MANUS / MEDICAL，便于分维度统计。
      */
     private String taskType;
 

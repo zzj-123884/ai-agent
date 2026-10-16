@@ -3,7 +3,7 @@ package org.example.aiagent.rag;
 import org.springframework.ai.chat.prompt.PromptTemplate;
 import org.springframework.ai.rag.generation.augmentation.ContextualQueryAugmenter;
 
-public class LoveAppContextualQueryAugmenterFactory {
+public class MedicalQueryAugmenterFactory {
     public static ContextualQueryAugmenter createInstance() {
         PromptTemplate emptyContextPromptTemplate = new PromptTemplate("""
                 你应该输出下面的内容：

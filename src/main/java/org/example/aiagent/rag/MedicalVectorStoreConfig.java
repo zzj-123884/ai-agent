@@ -12,17 +12,17 @@ import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
 @Configuration
-public class LoveAppVectorStoreConfig {
+public class MedicalVectorStoreConfig {
 
     @Resource
-    private LoveAppDocumentLoader loveAppDocumentLoader;
+    private MedicalDocumentLoader medicalDocumentLoader;
 
     @Resource
     private MyKeywordEnricher myKeywordEnricher;
 //    @Bean
-    VectorStore  loveAppVectorStore(EmbeddingModel dashscopeEmbeddingModel){
+    VectorStore  medicalVectorStore(EmbeddingModel dashscopeEmbeddingModel){
         SimpleVectorStore simpleVectorStore = SimpleVectorStore.builder(dashscopeEmbeddingModel).build();
-        List<Document> documentList =loveAppDocumentLoader.loadMarkdowns();
+        List<Document> documentList =medicalDocumentLoader.loadMarkdowns();
         List<Document> enrichedDocuments=myKeywordEnricher.enrichDocuments(documentList);
 
         simpleVectorStore.add(documentList);

@@ -15,10 +15,10 @@ import java.util.List;
 
 @Component
 @Slf4j
-public class LoveAppDocumentLoader {
+public class MedicalDocumentLoader {
     private final ResourcePatternResolver resourcePatternResolver;
 
-    public LoveAppDocumentLoader(ResourcePatternResolver resourcePatternResolver){
+    public MedicalDocumentLoader(ResourcePatternResolver resourcePatternResolver){
         this.resourcePatternResolver=resourcePatternResolver;
     }
     public List<Document> loadMarkdowns(){

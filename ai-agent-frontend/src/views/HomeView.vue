@@ -10,7 +10,7 @@
       </header>
 
       <nav class="choices" aria-label="应用列表">
-        <router-link to="/love-app" class="choice med">
+        <router-link to="/medical" class="choice med">
           <div class="choice-body">
             <p class="label">健康咨询</p>
             <h2>医学助手</h2>

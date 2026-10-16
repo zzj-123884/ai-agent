@@ -6,7 +6,7 @@ import org.example.aiagent.advisor.MyLoggerAdvisor;
 import org.example.aiagent.advisor.SensitiveWordAdvisor;
 import org.example.aiagent.chatmemory.FileBasedChatMemory;
 import org.example.aiagent.chatmemory.RedisChatMemory;
-import org.example.aiagent.rag.LoveAppRagCustomAdvisorFactory;
+import org.example.aiagent.rag.MedicalRagAdvisorFactory;
 import org.example.aiagent.rag.MedicalKnowledgeStore;
 import org.example.aiagent.rag.QueryRewriter;
 import org.springframework.ai.chat.client.ChatClient;
@@ -40,7 +40,7 @@ import static org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvis
 
 @Component
 @Slf4j
-public class LoveApp {
+public class MedicalAssistant {
     private final ChatClient chatClient;
     private final MedicalKnowledgeStore medicalKnowledgeStore;
     private static final String SYSTEM_PROMPT = "你是医学健康助手，只回答健康、疾病、症状、检查、用药、预防和就医相关的问题。" +
@@ -50,10 +50,10 @@ public class LoveApp {
             "资料不够时直接说明知识库没有匹配条目，不要编造出处。" +
             "不做诊断、不开药。出现胸痛、呼吸困难、大出血、意识不清时，告诉用户立即急诊。";
     //    @Resource
-//    private VectorStore loveAppVectorStore;
+//    private VectorStore medicalVectorStore;
 
 //    @Resource
-//    private Advisor loveAppRagCloudAdvisor;
+//    private Advisor medicalRagCloudAdvisor;
 
     @Resource
     private QueryRewriter queryRewriter;
@@ -63,7 +63,7 @@ public class LoveApp {
 
 
 //    初始化ai客户端
-    public LoveApp(DeepSeekChatModel deepSeekChatModel, MedicalKnowledgeStore medicalKnowledgeStore) {
+    public MedicalAssistant(DeepSeekChatModel deepSeekChatModel, MedicalKnowledgeStore medicalKnowledgeStore) {
         this.medicalKnowledgeStore = medicalKnowledgeStore;
 //        初始化基于文件的对话记忆
 //        String fileDir=System.getProperty("user.dir")+"/tmp/chat-memory";
@@ -121,20 +121,20 @@ public class LoveApp {
         return SYSTEM_PROMPT + "\n以下是检索到的资料：\n" + context;
     }
 
-    record LoveReport(String title, List<String> suggestions){}
+    record HealthReport(String title, List<String> suggestions){}
 //    演示结构化输出
-    public LoveReport doChatwithReporter(String message, String chatId) {
-        LoveReport LoveReport = chatClient
+    public HealthReport doChatwithReporter(String message, String chatId) {
+        HealthReport HealthReport = chatClient
                 .prompt()
-                .system(SYSTEM_PROMPT+"每次对话后都要生成恋爱结果,标题为{用户名}的恋爱报告,内容建议列表")
+                .system(SYSTEM_PROMPT+"每次对话后都要生成健康建议,标题为{用户名}的健康建议,内容建议列表")
                 .user(message)
                 .advisors(spec -> spec.param(CHAT_MEMORY_CONVERSATION_ID_KEY, chatId)
                         .param(CHAT_MEMORY_RETRIEVE_SIZE_KEY, 10))
                 .call()
-                .entity(LoveReport.class);
+                .entity(HealthReport.class);
 //        String content = response.getResult().getOutput().getText();
-        log.info("LoveReport: {}", LoveReport);
-        return LoveReport;
+        log.info("HealthReport: {}", HealthReport);
+        return HealthReport;
     }
 
 
@@ -171,11 +171,11 @@ public class LoveApp {
                         .param(CHAT_MEMORY_RETRIEVE_SIZE_KEY, 10))
                 .advisors(new MyLoggerAdvisor())
 //                应用本地rag知识库问答
-//                .advisors(new QuestionAnswerAdvisor(loveAppVectorStore))
+//                .advisors(new QuestionAnswerAdvisor(medicalVectorStore))
 //              应用rag检索增强服务(基于云知识库)
-//                .advisors(loveAppRagCloudAdvisor)
-//                .advisors(LoveAppRagCustomAdvisorFactory.createLoveAppRagCustomAdvisor(
-//                        loveAppVectorStore,"单身"
+//                .advisors(medicalRagCloudAdvisor)
+//                .advisors(MedicalRagAdvisorFactory.createMedicalRagAdvisor(
+//                        medicalVectorStore,"单身"
 //                ))
                 .call()
                 .chatResponse();

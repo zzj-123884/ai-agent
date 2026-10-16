@@ -14,8 +14,17 @@ import java.util.Set;
 
 public class SensitiveWordAdvisor implements CallAroundAdvisor {
 
-    // 违禁词列表（实际开发中可从数据库/Redis动态加载）
-    private static final Set<String> FORBIDDEN_WORDS = Set.of("做爱", "违禁词B", "敏感操作");
+    // 只拦截明确有害的请求。疾病名、药名和正常健康咨询不在此列。
+    private static final Set<String> FORBIDDEN_WORDS = Set.of(
+            "制毒",
+            "合成毒品",
+            "伪造处方",
+            "贩卖处方",
+            "投毒",
+            "下毒",
+            "毒药配方",
+            "自制毒药"
+    );
 
     @Override
     public AdvisedResponse aroundCall(AdvisedRequest advisedRequest, CallAroundAdvisorChain chain) {

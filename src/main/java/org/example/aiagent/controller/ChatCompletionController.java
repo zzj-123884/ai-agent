@@ -2,7 +2,7 @@ package org.example.aiagent.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
-import org.example.aiagent.app.LoveApp;
+import org.example.aiagent.app.MedicalAssistant;
 import org.example.aiagent.auth.AuthContext;
 import org.example.aiagent.service.ApiKeyService;
 import org.springframework.http.MediaType;
@@ -27,7 +27,7 @@ import java.util.UUID;
 public class ChatCompletionController {
 
     @Resource
-    private LoveApp loveApp;
+    private MedicalAssistant medicalAssistant;
 
     @Resource
     private ApiKeyService apiKeyService;
@@ -55,7 +55,7 @@ public class ChatCompletionController {
         String id = "chatcmpl-" + UUID.randomUUID().toString().replace("-", "");
 
         if (Boolean.TRUE.equals(request.getStream())) {
-            Flux<String> body = loveApp.doChatByStream(message, chatId)
+            Flux<String> body = medicalAssistant.doChatByStream(message, chatId)
                     .map(chunk -> toSse(id, model, chunk))
                     .concatWithValues("data: [DONE]\n\n")
                     .doOnComplete(() -> charge(apiKeyId));
@@ -64,7 +64,7 @@ public class ChatCompletionController {
                     .body(body);
         }
 
-        String text = loveApp.doChat(message, chatId);
+        String text = medicalAssistant.doChat(message, chatId);
         charge(apiKeyId);
         Map<String, Object> messageBody = new LinkedHashMap<>();
         messageBody.put("role", "assistant");

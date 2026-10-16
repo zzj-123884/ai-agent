@@ -75,10 +75,10 @@ function handleSend(text) {
 
   connection?.close()
   connection = createSseConnection(
-    '/ai/love_app/chat/sse',
+    '/ai/medical/chat/sse',
     { message: text, chatId: chatId.value },
     {
-      // 恋爱大师后端是 Flux<String> 纯文本流，不走 SseEvent 协议，
+      // 医学助手后端是 Flux<String> 纯文本流，不走 SseEvent 协议，
       // 因此这里用 onMessage 而不是 onEvent
       onMessage: (data) => {
         if (data === '[DONE]') {

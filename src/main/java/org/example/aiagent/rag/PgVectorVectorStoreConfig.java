@@ -18,7 +18,7 @@ import static org.springframework.ai.vectorstore.pgvector.PgVectorStore.PgIndexT
 public class PgVectorVectorStoreConfig {
 
     @Resource
-    private LoveAppDocumentLoader loveAppDocumentLoader;
+    private MedicalDocumentLoader medicalDocumentLoader;
 
 //    @Bean
 //    public VectorStore pgVectorVectorStore(JdbcTemplate jdbcTemplate, EmbeddingModel dashscopeEmbeddingModel) {
@@ -32,7 +32,7 @@ public class PgVectorVectorStoreConfig {
 //                .maxDocumentBatchSize(10000)
 //                .build();
 //
-//        List< Document> documents=loveAppDocumentLoader.loadMarkdowns();
+//        List< Document> documents=medicalDocumentLoader.loadMarkdowns();
 //        vectorStore.add(documents);
 //        return vectorStore;
 //    }

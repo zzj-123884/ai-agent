@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS ai_task
     task_id       VARCHAR(64)  NOT NULL UNIQUE,
     user_id       BIGINT       NULL,
     api_key_id    BIGINT       NULL,
-    -- 任务类型：MANUS / LOVE_APP 等，便于分维度统计
+    -- 任务类型：MANUS / MEDICAL 等，便于分维度统计
     task_type     VARCHAR(32)  NOT NULL,
     chat_id       VARCHAR(64)  NULL,
     user_prompt   TEXT         NULL,

@@ -4,7 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.example.aiagent.agent.model.Manus_deepseek;
-import org.example.aiagent.app.LoveApp;
+import org.example.aiagent.app.MedicalAssistant;
 import org.example.aiagent.auth.AuthContext;
 import org.example.aiagent.common.BaseResponse;
 import org.example.aiagent.common.ErrorCode;
@@ -47,7 +47,7 @@ import jakarta.annotation.Resource;
 public class AiController {
 
     @Resource
-    private LoveApp loveApp;
+    private MedicalAssistant medicalAssistant;
 
     @Resource
     private ToolCallback[] allTools;
@@ -64,33 +64,33 @@ public class AiController {
     @Resource
     private ApiKeyService apiKeyService;
 
-    private static final String TASK_TYPE_LOVE_APP = "LOVE_APP";
+    private static final String TASK_TYPE_MEDICAL = "MEDICAL";
     private static final String TASK_TYPE_MANUS = "MANUS";
 
-    // ==================== 恋爱大师 ====================
+    // ==================== 医学助手 ====================
 
-    @GetMapping("/love_app/chat/sync")
-    @Operation(summary = "恋爱大师-同步对话")
-    public BaseResponse<String> doChatWithLoveAppSync(
+    @GetMapping("/medical/chat/sync")
+    @Operation(summary = "医学助手-同步对话")
+    public BaseResponse<String> doChatWithMedicalSync(
             @RequestParam String message,
             @RequestParam(required = false) String chatId) {
 
         validateMessage(message);
 
-        AiTask task = createTask(TASK_TYPE_LOVE_APP, chatId, message, 1);
+        AiTask task = createTask(TASK_TYPE_MEDICAL, chatId, message, 1);
         String taskId = task != null ? task.getTaskId() : null;
         try {
             if (taskId != null) {
                 aiTaskService.markRunning(taskId);
             }
-            String content = loveApp.doChat(message, chatId);
+            String content = medicalAssistant.doChat(message, chatId);
             if (taskId != null) {
                 aiTaskService.markSucceeded(taskId, content);
             }
             chargeApiKey();
             return BaseResponse.success(content);
         } catch (Exception e) {
-            log.error("恋爱大师同步对话失败, taskId={}", taskId, e);
+            log.error("医学助手同步对话失败, taskId={}", taskId, e);
             if (taskId != null) {
                 aiTaskService.markFailed(taskId, e.getMessage());
             }
@@ -98,14 +98,14 @@ public class AiController {
         }
     }
 
-    @GetMapping(value = "/love_app/chat/sse", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    @Operation(summary = "恋爱大师-流式对话")
-    public Flux<String> doChatWithLoveAppSSE(
+    @GetMapping(value = "/medical/chat/sse", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @Operation(summary = "医学助手-流式对话")
+    public Flux<String> doChatWithMedicalSSE(
             @RequestParam String message,
             @RequestParam(required = false) String chatId) {
 
         validateMessage(message);
-        AiTask task = createTask(TASK_TYPE_LOVE_APP, chatId, message, 1);
+        AiTask task = createTask(TASK_TYPE_MEDICAL, chatId, message, 1);
         String taskId = task != null ? task.getTaskId() : null;
         Long apiKeyId = AuthContext.isApiKeyAuth() ? AuthContext.getApiKeyId() : null;
 
@@ -115,7 +115,7 @@ public class AiController {
 
         StringBuilder buffer = new StringBuilder();
 
-        return loveApp.doChatByStream(message, chatId)
+        return medicalAssistant.doChatByStream(message, chatId)
                 .doOnNext(buffer::append)
                 .doFinally(signal -> {
                     if (taskId != null) {
@@ -126,7 +126,7 @@ public class AiController {
                         } else if (signal == reactor.core.publisher.SignalType.CANCEL) {
                             aiTaskService.markStopped(taskId, 1);
                         } else {
-                            aiTaskService.markFailed(taskId, "恋爱大师流式响应失败");
+                            aiTaskService.markFailed(taskId, "医学助手流式响应失败");
                         }
                     }
                     if (signal == reactor.core.publisher.SignalType.ON_COMPLETE) {

@@ -32,7 +32,7 @@
 
 ### 医学助手
 
-地址：`http://localhost:5173/love-app`
+地址：`http://localhost:5173/medical`
 
 输入症状或健康问题后，后端先检索 MedlinePlus，再把命中的段落放进系统提示词，由 DeepSeek 用中文流式回答。页面提示回答会附带来源。这里不做诊断、不开药。
 

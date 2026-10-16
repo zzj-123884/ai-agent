@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import LoveAppView from '../views/LoveAppView.vue'
+import MedicalView from '../views/MedicalView.vue'
 import ManusAppView from '../views/ManusAppView.vue'
 import LoginView from '../views/LoginView.vue'
 import ApiKeyView from '../views/ApiKeyView.vue'
@@ -33,9 +33,9 @@ const routes = [
     },
   },
   {
-    path: '/love-app',
-    name: 'love-app',
-    component: LoveAppView,
+    path: '/medical',
+    name: 'medical',
+    component: MedicalView,
     meta: {
       title: `AI 医学助手 | ${SITE_NAME}`,
       description:

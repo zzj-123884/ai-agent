@@ -15,18 +15,18 @@ import org.springframework.stereotype.Component;
 //自定义基于阿里云服务的rag增强顾问
 //@Component
 @Slf4j
-public class LoveAppRagCloudAdvisorConfig {
+public class MedicalRagCloudAdvisorConfig {
 
     @Value("${spring.ai.dashscope.api-key}")
     private String dashscopeApiKey;
 
 //    @Bean
-//    public Advisor loveAppRagCloudAdvisor(){
+//    public Advisor medicalRagCloudAdvisor(){
 //
 //        DashScopeApi dashScopeApi =new DashScopeApi(dashscopeApiKey);
 //        DocumentRetriever dashScopeDocumentRetriever = new DashScopeDocumentRetriever(dashScopeApi,
 //                DashScopeDocumentRetrieverOptions.builder()
-//                        .withIndexName("恋爱大师")
+//                        .withIndexName("医学助手")
 //                        .build());
 //        return RetrievalAugmentationAdvisor.builder()
 //                .documentRetriever(dashScopeDocumentRetriever)
